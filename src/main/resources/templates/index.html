@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<head th:include="layouts/layout :: headerFragment">
+    <title id="pageTitle">Home</title>
+</head>
+<th:block layout:fragment="content">
+	<p>
+		Welcome to the Spring Boot Thymeleaf Application! The time is: <strong th:text="${#temporals.format(now, 'dd.MM.yyyy HH:mm:ss')}"></strong>
+	</p>
+</th:block>
+</html>
