@@ -1,7 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="header">
 	<header>
-		<a th:href="@{/}">Home</a> | <a th:href="@{/page2}">Page 2</a> | <a th:href="@{/page3}">Page 3</a> 
+		<a th:href="@{/}">Home</a> | <a th:href="@{/page2}">Page 2</a> | <a th:href="@{/page3}">Page 3</a>
+		<hr />
+		<a th:href="@{''(lang=de)}">Deutsch</a> | <a th:href="@{''(lang=fr)}">Français</a> | <a th:href="@{''(lang=en)}">English</a>
+		<hr /> 
 	</header>
 </div>
 </html>
