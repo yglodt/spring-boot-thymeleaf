@@ -1,8 +1,19 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layouts/layout}">
 <head th:include="layouts/layout :: headerFragment">
-    <title id="pageTitle">Page 3</title>
+<title id="pageTitle">Page 3</title>
 </head>
 <th:block layout:fragment="content">
 	<p>This is page 3.</p>
+	<p><em>This page is secure.</em></p>
+	
+		<script type="text/javascript" th:inline="javascript">
+
+		/*[# sec:authorize="not hasRole('ROLE_ADMINS')"]*/
+			document.writeln("ADMIN !!!");
+		/*[/]*/
+
+	</script>
+	
+	
 </th:block>
 </html>

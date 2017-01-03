@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:include="layouts/layout :: headerFragment">
+<title id="pageTitle">Login</title>
+</head>
+<th:block layout:fragment="content">
+
+	<p><a th:href="@{/}">Home</a></p>
+
+	<h4>Login</h4>
+
+	<p th:if="${param.error}">Invalid username and password.</p>
+	<p th:if="${param.logout}">You have been logged out.</p>
+
+	<form th:action="@{/authcheck}" method="post">
+		<input type="text" name="username" />
+		<br />
+		<input type="password" name="password" />
+		<br />
+		<input type="submit" value="Login" />
+	</form>
+
+	<script type="text/javascript">
+		document.getElementById("username").focus();
+	</script>
+</th:block>
+</html>
